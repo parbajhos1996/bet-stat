@@ -7,8 +7,7 @@ pipeline {
              git url: 'https://github.com/parbajhos1996/bet-stat.git'
             }
             withMaven() {
-                sh 'mvn compile'
-		sh 'mvn test'
+		sh 'mvn install'
             }
         }
         }
