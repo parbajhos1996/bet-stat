@@ -1,13 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage ('Compile Stage') {
+        stage ('Build stage') {
         steps {
             dir('.') {
              git url: 'https://github.com/parbajhos1996/bet-stat.git'
             }
             withMaven() {
-                sh 'mvn clean install'
+                sh 'mvn compile'
+		sh 'mvn test'
             }
         }
         }
